@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudClicker.Domain", "src\MudClicker.Domain\MudClicker.Domain.csproj", "{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudClicker.Application", "src\MudClicker.Application\MudClicker.Application.csproj", "{1B2B9EC9-3C87-424B-B345-A61F9B2844F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudClicker.Infrastructure", "src\MudClicker.Infrastructure\MudClicker.Infrastructure.csproj", "{F3EDB9C9-011B-4479-9756-FE33CC42BE98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudClicker.WebUI", "src\MudClicker.WebUI\MudClicker.WebUI.csproj", "{F50941A5-F89D-41DD-8201-747A0F82D3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudClicker.WebAPI", "src\MudClicker.WebAPI\MudClicker.WebAPI.csproj", "{F71204F8-C3A9-425A-AEF4-661C58EE0B63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9} = {99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}
+		{1B2B9EC9-3C87-424B-B345-A61F9B2844F7} = {99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}
+		{F3EDB9C9-011B-4479-9756-FE33CC42BE98} = {99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}
+		{F50941A5-F89D-41DD-8201-747A0F82D3EA} = {99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}
+		{F71204F8-C3A9-425A-AEF4-661C58EE0B63} = {99374D27-0CC4-49D3-A5C4-FDC8A2175AE8}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4569CB57-9047-4C58-9B90-E5BFCDFA8BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2B9EC9-3C87-424B-B345-A61F9B2844F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2B9EC9-3C87-424B-B345-A61F9B2844F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2B9EC9-3C87-424B-B345-A61F9B2844F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2B9EC9-3C87-424B-B345-A61F9B2844F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3EDB9C9-011B-4479-9756-FE33CC42BE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3EDB9C9-011B-4479-9756-FE33CC42BE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3EDB9C9-011B-4479-9756-FE33CC42BE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3EDB9C9-011B-4479-9756-FE33CC42BE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50941A5-F89D-41DD-8201-747A0F82D3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50941A5-F89D-41DD-8201-747A0F82D3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50941A5-F89D-41DD-8201-747A0F82D3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50941A5-F89D-41DD-8201-747A0F82D3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71204F8-C3A9-425A-AEF4-661C58EE0B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71204F8-C3A9-425A-AEF4-661C58EE0B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71204F8-C3A9-425A-AEF4-661C58EE0B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71204F8-C3A9-425A-AEF4-661C58EE0B63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
