@@ -1,18 +1,38 @@
-﻿@inherits LayoutComponentBase
+﻿@using MudClicker.Domain.Models
+@using Skill = MudClicker.Domain.Models.Skill
+@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudSpacer />
+        <UserProfile />
+        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+    </MudAppBar>
+    <MudDrawer Open Elevation="2">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h5" Class="mt-1">Application</MudText>
+        </MudDrawerHeader>
+       @foreach (var skill in _skills)
+       {
+           <SkillDisplay Skill="skill" Experience="52" MaxExperience="100" Level="2" />
+       }
+    </MudDrawer>
+    <MudMainContent Class="pa-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-            <UserProfile />
-        </div>
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+@code {
+
+    private List<Skill> _skills = new List<Skill>()
+    {
+        Skill.Code,
+        Skill.Sales,
+        Skill.Social
+    };
+
+}

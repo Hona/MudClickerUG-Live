@@ -1,0 +1,25 @@
+﻿@using MudClicker.Domain.Models
+@using Skill = MudClicker.Domain.Models.Skill
+
+<MudAlert>
+    <MudStack>
+        <MudStack Row>
+            <MudText Typo="Typo.h4">@Skill.ToString()</MudText>
+            <MudText Typo="Typo.h5">Level: @Level</MudText>
+        </MudStack>
+        <MudProgressLinear Min="0" Value="Experience" Max="MaxExperience" />
+    </MudStack>
+</MudAlert>
+
+@code {
+    [Parameter]
+    public Skill Skill { get; set; }
+
+    [Parameter]
+    public int Level { get; set; }
+
+    [Parameter]
+    public int Experience { get; set; }
+    [Parameter]
+    public int MaxExperience { get; set; }
+}

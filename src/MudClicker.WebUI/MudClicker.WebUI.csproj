@@ -11,6 +11,11 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.2" PrivateAssets="all" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+        <PackageReference Include="MudBlazor" Version="6.0.18" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MudClicker.Domain\MudClicker.Domain.csproj" />
     </ItemGroup>
 
 </Project>

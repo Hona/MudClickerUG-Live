@@ -1,8 +1,18 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Azure.Cosmos;
+using MudClicker.Application;
+using MudClicker.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+var connectionString = builder.Configuration.GetConnectionString("Cosmos");
+builder.Services.AddSingleton(new CosmosClient(connectionString));
+builder.Services.AddSingleton<GenericRepository>();
+builder.Services.AddScoped<CodeService>();
+builder.Services.AddScoped<CurrentUserService>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

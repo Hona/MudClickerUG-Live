@@ -1,0 +1,30 @@
+﻿@page "/Leaderboard"
+
+@inject SkillsClient SkillsClient
+
+<h3>Leaderboard</h3>
+
+@if (_leaderboard is not null)
+{
+    <MudDataGrid Items="@_leaderboard">
+    <Columns>
+        <Column T="Player" Field="@nameof(Player.Id)"/>
+        <Column T="Player" Field="@nameof(Player.DisplayName)" />
+        <Column T="Player">
+            <CellTemplate>
+                Code: @context.Item.Skills[Skill.Code]
+            </CellTemplate>
+        </Column>
+        </Columns>
+    </MudDataGrid>
+}
+
+@code {
+    private IReadOnlyList<Player>? _leaderboard;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _leaderboard = await SkillsClient.GetLeaderboardAsync();
+    }
+
+}

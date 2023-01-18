@@ -17,6 +17,11 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\MudClicker.Application\MudClicker.Application.csproj" />
+      <ProjectReference Include="..\MudClicker.Infrastructure\MudClicker.Infrastructure.csproj" />
+    </ItemGroup>
+
     <PropertyGroup>
         <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     </PropertyGroup>
