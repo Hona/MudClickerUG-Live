@@ -508,6 +508,11 @@ namespace MudClicker.WebUI
         [System.ComponentModel.DataAnnotations.Required]
         public PlayerSkills Skills { get; set; } = new PlayerSkills();
 
+        [System.Text.Json.Serialization.JsonPropertyName("partitionKey")]
+
+        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]   
+        public int PartitionKey { get; set; }
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]

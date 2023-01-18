@@ -37,5 +37,7 @@ builder.Services.AddHttpClient(ApiClient,
 builder.Services.AddMudServices();
 
 builder.Services.AddHttpClient<WeatherForecastClient>(ApiClient);
+builder.Services.AddHttpClient<SkillsClient>(ApiClient);
+
 
 await builder.Build().RunAsync();

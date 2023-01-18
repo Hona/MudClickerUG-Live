@@ -18,8 +18,12 @@ public class GenericRepository
         var result = await _cosmosClient.CreateDatabaseIfNotExistsAsync(DbConstants.DatabaseName);
         
         var database = result.Database;
-        var response = await database.CreateContainerIfNotExistsAsync(typeof(T).FullName, "/" + "Id" ?? throw new InvalidCastException("Cannot cast partition key expression to MemberExpression"));
-        return response.Container;
+        // get the container from cosmos sdk
+        var container = await database.CreateContainerIfNotExistsAsync(
+            typeof(T).FullName,
+            "/" + nameof(IDocument.PartitionKey),
+            400);
+        return container.Container;
     }
     
 
@@ -30,7 +34,9 @@ public class GenericRepository
         try
         {
             var getPartitionKey = partitionKeyExpression.Compile();
-            var response = await container.ReadItemAsync<T>(idExpression(model), new PartitionKey("Id"));
+            
+            // get the item from cosmos sdk
+            var response = await container.ReadItemAsync<T>(idExpression(model), new PartitionKey(nameof(IDocument.PartitionKey)));
             return response.Resource;
         }
         catch (CosmosException e) when (e.StatusCode == HttpStatusCode.NotFound)
@@ -51,7 +57,6 @@ public class GenericRepository
                 queryDefinition: null,
                 requestOptions: new QueryRequestOptions
                 {
-                    PartitionKey = new PartitionKey("Id")
                 });
             
             while (resultSet.HasMoreResults)
@@ -78,12 +83,10 @@ public class GenericRepository
         await container.CreateItemAsync(item, new PartitionKey(getPartitionKey(item)));
     }
     
-    public async Task CreateOrUpdateItemAsync<T>(T item, Expression<Func<T, string>> partitionKeyExpression) where T : IDocument
+    public async Task CreateOrUpdateItemAsync<T>(T item) where T : IDocument
     {
         var container = await GetContainerAsync<T>();
-        var getPartitionKey = partitionKeyExpression.Compile();
-
-        await container.UpsertItemAsync(item, new PartitionKey(getPartitionKey(item)));
+        await container.UpsertItemAsync(item);
     }
     
     public async Task DeleteItemAsync<T>(T item, Expression<Func<T, string>> partitionKeyExpression) where T : IDocument

@@ -35,7 +35,7 @@ public class CodeService
 
         user.Skills[Skill.Code] += 1;
 
-        await _genericRepository.CreateOrUpdateItemAsync(user, x => x.Id);
+        await _genericRepository.CreateOrUpdateItemAsync(user);
     }
 
     public async Task<List<Player>> GetLeaderboardAsync()
